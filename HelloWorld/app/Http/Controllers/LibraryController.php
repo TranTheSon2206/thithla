@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Library;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class LibraryController extends Controller
 {
@@ -52,12 +53,11 @@ class LibraryController extends Controller
         return redirect('library')->with('flash_message', 'Library deleted!');
     }
 
-    
-    public function search(Request $request) {
-            $key = $request->input('keyword');
-            $books = Library::where('title', 'like', '%'.$key.'%')->get();
-            return view('index', ['libraries'=>$books]);
-
+    public function search(Request $request)
+    {
+    $keyword = $request->input('query');
+    $libraries = Library::where('title', 'LIKE', "%$keyword%")->paginate(5);
+    return view('librarys.search')->with('libraries', $libraries);
     }
 
     
