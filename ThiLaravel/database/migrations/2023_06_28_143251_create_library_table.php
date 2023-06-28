@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('ISBN', 25);
             $table->smallInteger('pub_year');
             $table->tinyInteger('available');
+            $table->timestamps();
         });
     }
 
