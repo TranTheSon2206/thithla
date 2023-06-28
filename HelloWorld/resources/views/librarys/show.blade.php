@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="card-body">
                         <label>Title</label>
-                        <p class="card">{{ optional($library)->title }}</p>
+                        <p class="card form-control" readonly>{{ optional($library)->title }}</p>
 
                         <label>Book ID</label>
                         <p class="card form-control" readonly>{{ optional($library)->bookid }}</p>
@@ -29,11 +29,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Publication Year</label>
-                                <p class="card">{{ optional($library)->pub_year }}</p>
+                                <p class="card form-control" readonly>{{ optional($library)->pub_year }}</p>
                             </div>
                             <div class="col-md-6">
                                 <label>Available</label>
-                                <p class="card">{{ optional($library)->available }}</p>
+                                <p class="card form-control" readonly>{{ optional($library)->available }}</p>
                             </div>
                         </div>
                     
