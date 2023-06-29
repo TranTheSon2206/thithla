@@ -14,3 +14,4 @@ Route::get('/library/edit/{bookid}', [LibraryController::class, 'edit'])->name('
 Route::delete('/library/delete/{bookid}', [LibraryController::class, 'destroy'])->name('library.delete');
 Route::post('/library', [LibraryController::class, 'store']);
 Route::get('/library/search', [LibraryController::class, 'search'])->name('library.search');
+Route::patch('/library/update/{bookid}', [LibraryController::class, 'update'])->name('library.update');
